@@ -1,11 +1,21 @@
 name: AWS Actions
-on: pull_request
+on: push
 jobs:
   IAM:
     name: IAM Service
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS Credential
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.access-key }}
+          aws-secret-access-key: ${{ secrets.secret-key }}
+      - name: List IAM Users
+        run: aws iam list-users
+          
+          
+          
+        
         
 
       
