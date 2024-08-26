@@ -1,7 +1,7 @@
 name: artifact
 on: push
 env:
-  FILE_NAME: go_files/hello-server
+  FILE_NAME: hello-server
 
 jobs:
   build:
@@ -16,10 +16,14 @@ jobs:
       run: ls -l  
 
     - name: Build ${{ env.FILE_NAME }} for ubuntu-latest
-      run: go build ${{ env.FILE_NAME }}.go
+      run: |
+      cd go_files
+      go build ${{ env.FILE_NAME }}.go
 
     - name: Build ${{ env.FILE_NAME }} for windows-latest
-      run: GOOS=windows GOARCH=amd64 go build ${{ env.FILE_NAME }}.go
+      run: |
+      cd go_files
+      GOOS=windows GOARCH=amd64 go build ${{ env.FILE_NAME }}.go
       
     - name: Upload artifact for linux
       uses: actions/upload-artifact@v1.0.0
