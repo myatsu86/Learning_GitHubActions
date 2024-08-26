@@ -7,3 +7,9 @@ jobs:
     steps:
       - name: print date
         run: date
+  Job-2
+    name: Second Job
+    runs-on: window-latest
+    steps:
+      - name: print date
+        run: echo  %date%-%time%
