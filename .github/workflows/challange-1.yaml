@@ -7,9 +7,23 @@ jobs:
     steps:
       - name: print date
         run: date
-  Job-2
+  Job-2:
     name: Second Job
     runs-on: window-latest
     steps:
       - name: print date
-        run: echo  %date%-%time%
+        run: Get-Date
+  Job-3:
+    name: Third Job
+    runs-on: macos-latest
+    steps:
+      - name: print date
+        run: date
+  Job-4:
+    name: Forth Job
+    needs: [Job-1, Job-2, Job-3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: final command
+        run: echo "This is last job of this workflow."
+              
