@@ -1,5 +1,4 @@
 name: AWS Actions
-on: push
 jobs:
   IAM:
     name: IAM Service
