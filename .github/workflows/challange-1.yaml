@@ -1,0 +1,9 @@
+name: Challange-1
+on: push
+jobs:
+  Job-1:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      name: print date
+      run: date
