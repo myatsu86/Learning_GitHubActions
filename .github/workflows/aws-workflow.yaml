@@ -10,7 +10,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.ACCESSKEY }}
           aws-secret-access-key: ${{ secrets.SECRETKEY }}
-          aws-region: us-east-1
+          aws-region: ${{ env.AWS_REGION }}
       - name: List IAM Users
         run: aws iam list-users
           
