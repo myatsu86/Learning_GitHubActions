@@ -16,14 +16,10 @@ jobs:
       run: ls -l  
 
     - name: Build ${{ env.FILE_NAME }} for ubuntu-latest
-      run: |
-        cd go_files
-        go build ${{ env.FILE_NAME }}.go
+      run: go build ${{ env.FILE_NAME }}.go
 
     - name: Build ${{ env.FILE_NAME }} for windows-latest
-      run: |
-        cd go_files
-        GOOS=windows GOARCH=amd64 go build ${{ env.FILE_NAME }}.go
+      run: GOOS=windows GOARCH=amd64 go build ${{ env.FILE_NAME }}.go
       
     - name: Upload artifact for linux
       uses: actions/upload-artifact@v1.0.0
@@ -52,9 +48,7 @@ jobs:
         name: linux
 
     - name: Test ${{ env.FILE_NAME }}
-      run: |
-        cd go_files
-        source ./test.sh
+      run: source ./test.sh
 
   test-windows:
     name: Test Windows
