@@ -12,6 +12,9 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v1
 
+    - name: List the file
+      run: ls -l  
+
     - name: Build ${{ env.FILE_NAME }} for ubuntu-latest
       run: go build ${{ env.FILE_NAME }}.go
 
