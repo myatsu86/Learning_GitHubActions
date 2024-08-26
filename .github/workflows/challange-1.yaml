@@ -5,5 +5,5 @@ jobs:
     name: First Job
     runs-on: ubuntu-latest
     steps:
-      name: print date
-      run: date
+      - name: print date
+        run: date
