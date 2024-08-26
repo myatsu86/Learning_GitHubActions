@@ -1,7 +1,7 @@
 name: artifact
 on: push
 env:
-  FILE_NAME: hello-server
+  FILE_NAME: go_files/hello-server
 
 jobs:
   build:
